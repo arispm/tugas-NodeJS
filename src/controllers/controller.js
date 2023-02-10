@@ -12,7 +12,7 @@ exports.aboutMe = async (req, res, next) => {
 
     return res.status(200).send({
       message: `retrive data profile success`,
-      data: me.dataValues,
+      data: me,
     });
   } catch (error) {
     console.log('object :>> ', error);
