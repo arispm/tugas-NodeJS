@@ -4,7 +4,6 @@ const cors = require('cors');
 const { sequelize } = require('./models');
 
 const router = require('./routes/router');
-const userRoute = require('./routes/userRoute');
 const authRoute = require('./routes/authRouter');
 
 const app = express();
@@ -25,7 +24,7 @@ sequelize
 
 app.use('/', router);
 app.use('/about-me', router);
-app.use('/user', userRoute);
+app.use('/user', router);
 app.use('/auth', authRoute);
 
 app.listen(process.env.SERVER_PORT, () => {
